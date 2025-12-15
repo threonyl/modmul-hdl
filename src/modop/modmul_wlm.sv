@@ -34,7 +34,7 @@ localparam INTMUL_LAT = intmul_wrapper_lat(intmul_params);
 
 localparam SHIFT_QH = INTMUL_LAT;
 
-localparam USE_WLM_MIXED = (LOGQH <= `DSP_B_U) ? 1 : 0;
+localparam USE_WLM_MIXED = ((LOGQH <= `DSP_B_U) && (((LOGQ-LOGQH) * 2) >= LOGQ)) ? 1 : 0;
 
 wire [2*LOGQ - 1:0] C;
 
